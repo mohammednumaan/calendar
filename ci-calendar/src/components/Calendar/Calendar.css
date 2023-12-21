@@ -1,0 +1,31 @@
+.calendar{
+    padding: 20px;
+}
+
+.calendar > * {
+    font-family: sans-serif;
+}
+
+.fc-toolbar-title{
+    color: black;
+}
+
+.fc-col-header-cell{
+    color: #6D31EDFF;
+}
+
+.fc .fc-daygrid-day-number{
+    color: #171A1FFF;
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button{
+    text-transform:capitalize;
+}
+
+.fc .fc-daygrid-day.fc-day-today{
+    background-color: #F1EAFF;
+}
+.calendar-title{
+    color: black;
+}
+
