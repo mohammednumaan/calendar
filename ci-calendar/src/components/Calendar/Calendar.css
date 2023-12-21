@@ -1,3 +1,5 @@
+/* CALENDAR STYLING (BASIC) */
+
 .calendar{
     padding: 20px;
 }
@@ -6,8 +8,16 @@
     font-family: sans-serif;
 }
 
+.calendar-title{
+    color: black;
+}
+
 .fc-toolbar-title{
     color: black;
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button{
+    text-transform:capitalize;
 }
 
 .fc-col-header-cell{
@@ -18,14 +28,9 @@
     color: #171A1FFF;
 }
 
-.fc-direction-ltr .fc-button-group > .fc-button{
-    text-transform:capitalize;
-}
 
 .fc .fc-daygrid-day.fc-day-today{
     background-color: #F1EAFF;
 }
-.calendar-title{
-    color: black;
-}
+
 

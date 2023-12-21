@@ -14,7 +14,6 @@ export default function Calendar(){
             <h1 className="calendar-title">Your Calendar </h1>
             <FullCalendar 
 
-            themeSystem={'bootstrap4'}
             aspectRatio={2.8}
             plugins={[daygridPlugin, timegridPlugin, multiMonthPlugin, interactionPlugin, listPlugin]}
             initialView={"dayGridMonth"}
