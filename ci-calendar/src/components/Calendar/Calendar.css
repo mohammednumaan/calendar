@@ -9,6 +9,11 @@
         align-items: center;
         flex-direction: column;
         gap: 20px;
+        
+    }
+
+    .fc-toolbar-chunk{
+        font-size: 10px;
     }
 
     .fc-view{
@@ -36,6 +41,10 @@
 
     .fc-daygrid-day-top{
         font-size: 10px;
+    }
+
+    .fc-day{
+        height: 30px;
     }
 
     /* .fc-day{
