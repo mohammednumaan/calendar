@@ -57,9 +57,11 @@ export default function Calendar(){
 
             // basic styling and setting up respective plugins
 
-            aspectRatio={2.8}
+            aspectRatio={window.innerWidth <= '600px' ? 2.8 : 2.8}
             plugins={[daygridPlugin, timegridPlugin, multiMonthPlugin, interactionPlugin, listPlugin]}
             initialView={"dayGridMonth"}
+            contentHeight={window.innerWidth <= '600px' ? '100vh' :'78vh'}
+            // handleWindowResize=
 
             // events display and popup
             events={userEvents}
@@ -71,7 +73,8 @@ export default function Calendar(){
               return new bootstrap.Popover(info.el, {
                 title : info.event.title,
                 placement : 'auto',
-                trigger : 'hover',
+                trigger : 'click hover',
+                
                 customClass : 'popOverStyle',
                 content : `<p>${info.event.extendedProps.description}</p>`,
                 html : true
