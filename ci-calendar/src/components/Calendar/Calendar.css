@@ -25,32 +25,32 @@
 
     .fc-event-title-container{
         padding: 10px;
-        height: 70px;
+        height: 20px;
 
     }   
 
     .fc-event-title{
-        font-size: 12px;
+        font-size: 10px;
         text-overflow: ellipsis;
         
         
     }
 
-    .fc-col-header-cell-cushion{
-        font-size: 10px;
+    .fc-event-main-frame{
+        border-radius: 20px;
     }
+
+    .fc-col-header-cell-cushion{
+        font-size: 12px;
+    }
+
+
 
     .fc-daygrid-day-top{
         font-size: 10px;
     }
 
-    .fc-day{
-        height: 30px;
-    }
 
-    /* .fc-day{
-        width: px;
-    } */
     
 }
 

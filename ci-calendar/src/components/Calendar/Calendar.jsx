@@ -1,6 +1,6 @@
 // IMPORTS
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Calendar.css'
@@ -17,11 +17,12 @@ import interactionPlugin from "@fullcalendar/interaction";
 
 export default function Calendar(){
 
+
   const [userEvents, setUserEvents] = useState([
     {
       'id' : 1,
       'title' : 'SIH 2023',
-      'start' : '2023-11-01',
+      'start' : '2023-01-01',
       'description' : 'THIS IS A SAMPLE DESCRIPTION, STYLING CAN BE CHANGED LATER'
     },
 
@@ -41,6 +42,7 @@ export default function Calendar(){
 
   ]) 
 
+
   // we can fetch the data from the database using async/await or by old-school promises-chaining and then set the
   //userEvents state to the fetched data
 
@@ -54,17 +56,18 @@ export default function Calendar(){
 
             <h1 className="calendar-title">Your Calendar </h1>
             <FullCalendar 
-
+                  
             // basic styling and setting up respective plugins
-
             aspectRatio={window.innerWidth <= '600px' ? 2.8 : 2.8}
             plugins={[daygridPlugin, timegridPlugin, multiMonthPlugin, interactionPlugin, listPlugin]}
-            initialView={"dayGridMonth"}
+            initialView={'dayGridMonth'}
             contentHeight={window.innerWidth <= '600px' ? '100vh' :'78vh'}
-            // handleWindowResize=
+            themeSystem="bootstrap"
 
             // events display and popup
             events={userEvents}
+            eventDisplay="list"
+            eventBackgroundColor="#29ADB2"
 
             // when the event element mounts, and on hover, we trigger a modal to show general details about the event
 
@@ -73,7 +76,8 @@ export default function Calendar(){
               return new bootstrap.Popover(info.el, {
                 title : info.event.title,
                 placement : 'auto',
-                trigger : 'click hover',
+                trigger : 'hover',
+                
                 
                 customClass : 'popOverStyle',
                 content : `<p>${info.event.extendedProps.description}</p>`,
@@ -83,11 +87,13 @@ export default function Calendar(){
             
             // additional features to navigate the calendar
 
-            headerToolbar={{start : 'today prev,next', center : 'title', end : 'dayGridMonth,dayGridWeek,timeGridDay,list'}}
+            headerToolbar={{start : 'today prev,next', center : 'title', end : 'dayGridMonth,dayGridWeek,timeGridDay,listWeek'}}
             selectable={true}
 
             />
         </div>
     </div>
   );
+
+
 }
