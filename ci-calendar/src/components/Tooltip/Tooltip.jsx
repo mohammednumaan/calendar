@@ -7,12 +7,9 @@ export default function showDescription(info){
         placement : 'auto',
         trigger : 'hover',
         animation : true,
- 
-            
+        container:info.el,
         customClass : 'popOverStyle',
         content : `<p>${info.event.extendedProps.description}</p>`,
         html : true,
-        container:info.el
-        
-    })
+    });
 }
