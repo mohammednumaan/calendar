@@ -21,7 +21,14 @@ import calendarFunctions from "./CalendarUtil";
 export default function Calendar(){
 
   const calendar = useRef(null)
-  const calendarApi = calendar.current.getApi()
+  const [calendarApi, setCalendarApi] = useState(null)
+
+  useEffect(() => {
+    (async function getCalendarApi(){
+      const api = await calendar.current.getApi()
+      setCalendarApi(api)
+    })()
+  },[])
   
   
 
@@ -62,11 +69,10 @@ export default function Calendar(){
   //re-render the calendar accordingly
 
   useEffect(() => {
-    calendarFunctions.nextMonth(calendarApi)
-    calendarFunctions.prevMonth(calendarApi)
-
-  },[calendarApi])
-
+    if (calendarApi !== null) {
+      calendarFunctions.nextMonth(calendarApi)
+    }
+  }, [calendarApi])
 
   return (
     <div className="calendar">
